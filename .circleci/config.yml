@@ -14,8 +14,7 @@ jobs:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
-          path:
-            - ~/.gradle
+          path: ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
       - run:
           name: Run Tests
